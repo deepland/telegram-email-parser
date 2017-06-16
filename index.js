@@ -14,14 +14,19 @@ bot.onText(/\/start/, showHelp);
 bot.onText(/\/help/, showHelp);
 
 bot.onText(/\/url (.*)/, async (msg, match) => {
-  const document = await get(match[0]);
+  const document = await get(match[1], msg.chat.id);
+  if (!document) return;
+
   const emails = parse(document);
 
   let str = '';
 
-  for (var email of emails) {
-    str += email + '\n';
-  }
+  if (emails.length) {
+    for (var email of emails) {
+      str += email + '\n';
+    }
+
+  } else str = 'No emails.';
 
   bot.sendMessage(msg.chat.id, str);
 });
@@ -31,19 +36,22 @@ function parse (str) {
   let regexp = /[\w\.]+@\w+\.[A-Za-z]+/g;
 
   while (result = regexp.exec(str)) {
-    emails.push(result);
+    emails.push(result[0]);
   }
+
+  return emails;
 }
 
-function get (url) {
+async function get (url, id) {
   try {
-    return requestp(url);
+    return await requestp(url);
   } catch (e) {
-    console.log(`${url}: ${e}`);
+    bot.sendMessage(id, `${url}: ${e}`);
   }
 }
 
 function showHelp (msg) {
-  const str = 'Commands:\n/url <url>';
+  let str = 'Commands:\n' +
+  '/url <url>  URL with http:// or https://';
   bot.sendMessage(msg.chat.id, str);
 }
