@@ -1,0 +1,31 @@
+{
+  "name": "telegram-email-parser",
+  "version": "1.0.0",
+  "description": "Get all emails from webpage using telegram bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Save14",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.27.1",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Save14/telegram-email-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Save14/telegram-email-parser/issues"
+  },
+  "homepage": "https://github.com/Save14/telegram-email-parser#readme",
+  "devDependencies": {},
+  "keywords": [
+    "telegram",
+    "javascript",
+    "node.js",
+    "email"
+  ]
+}
