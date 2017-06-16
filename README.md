@@ -15,7 +15,7 @@ Node v7.6.0+ with async/await support.
 
 ## Install and usage
 
-###### Install:
+##### Install:
 
 ```sh
 git clone https://github.com/Save14/telegram-email-parser telegram-email-parser
@@ -25,7 +25,14 @@ npm install
 
 Set your telegram bot token in settings.json.
 
-###### Run:
+###### settings.json example:
+```json
+{
+  "token": "296215141:ABHbxSGSASSlGbgtjp4Cwutssezznp8cf9T"
+}
+```
+
+##### Run:
 
 ```sh
 node index.js
