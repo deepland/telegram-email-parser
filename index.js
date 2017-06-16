@@ -19,6 +19,7 @@ bot.onText(/\/start/, showHelp);
 bot.onText(/\/help/, showHelp);
 
 bot.onText(/\/url (.*)/, async (msg, match) => {
+  console.log(`Request: ${match[1]}`);
   const document = await get(match[1], msg.chat.id);
   if (!document) return;
 
