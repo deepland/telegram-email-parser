@@ -4,7 +4,8 @@
   "description": "Get all emails from webpage using telegram bot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "install": "node postinstall.js"
   },
   "author": "Save14",
   "license": "MIT",
