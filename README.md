@@ -18,7 +18,7 @@ Node v7.6.0+ with async/await support.
 ##### Install:
 
 ```sh
-git clone https://github.com/Save14/telegram-email-parser telegram-email-parser
+git clone https://github.com/Bannerets/telegram-email-parser telegram-email-parser
 cd telegram-email-parser
 npm install
 ```
